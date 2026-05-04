@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center py-4">
+    <h1 class="display-5">Online Learning Resource Portal</h1>
+    <p class="lead">Browse courses and digital resources. Register or log in to save favorites.</p>
+    <p>
+        <a class="btn btn-primary btn-lg" asp-controller="Courses" asp-action="Index">Browse courses</a>
+        <a class="btn btn-outline-secondary btn-lg" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </p>
+</div>

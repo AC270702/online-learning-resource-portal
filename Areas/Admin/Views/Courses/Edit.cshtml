@@ -1,0 +1,37 @@
+@model OnlineLearningResourcePortal.Models.Course
+@{
+    ViewData["Title"] = "Edit course";
+}
+
+<h1>Edit course</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ThumbnailUrl" class="form-label"></label>
+        <input asp-for="ThumbnailUrl" class="form-control" />
+        <span asp-validation-for="ThumbnailUrl" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ResourceUrl" class="form-label"></label>
+        <input asp-for="ResourceUrl" class="form-control" />
+        <span asp-validation-for="ResourceUrl" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a class="btn btn-link" asp-action="Index">Cancel</a>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
